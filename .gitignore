@@ -1,0 +1,14 @@
+# Ignore node_modules in both folders
+Client/node_modules/
+Server/node_modules/
+
+# Ignore builds
+Client/build/
+Client/dist/
+Server/build/
+Server/dist/
+
+# Ignore other common stuff
+*.env
+.DS_Store
+Thumbs.db
