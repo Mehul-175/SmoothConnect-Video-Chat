@@ -1,9 +1,10 @@
+import "./configEnv.js"
+// import dotenv from "dotenv";
+// dotenv.config();
 import express from "express";
-import dotenv from "dotenv";
 import authRoutes from "./routes/auth.route.js";
 import connectDB from "./lib/db.js";
 
-dotenv.config();
 
 const PORT = process.env.PORT;
 
