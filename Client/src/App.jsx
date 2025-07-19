@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
-import Onboading from "./pages/Onboading.jsx";
+import Onboarding from "./pages/Onboarding.jsx";
 import ChatPage from "./pages/ChatPage.jsx";
 import CallPage from "./pages/CallPage.jsx";
 import Notifications from "./pages/Notifications.jsx";
@@ -42,7 +42,7 @@ const App = () => {
         />
         <Route
           path="/onboarding"
-          element={isAuthenticated ? <Onboading /> : <Navigate to="/login" />}
+          element={isAuthenticated ? ( isOnboarded ? <Navigate to="/" /> : <Onboarding />) : (<Navigate to="/login" />)}
         />
         <Route
           path="/chat"
