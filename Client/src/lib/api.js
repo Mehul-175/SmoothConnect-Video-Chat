@@ -6,8 +6,13 @@ export const signup = async (signupData) => {
 };
 
 export const getAuthUser = async () => {
-  const res = await axiosInstance.get("/auth/me");
-  return res.data;
+  try {
+    const res = await axiosInstance.get("/auth/me");
+    return res.data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };
 
 export const onboard = async (onboardData) => {
@@ -17,5 +22,10 @@ export const onboard = async (onboardData) => {
 
 export const login = async (loginData) => {
   const res = await axiosInstance.post("/auth/login", loginData);
+  return res.data;
+}
+
+export const logout = async () => {
+  const res = await axiosInstance.post("/auth/logout");
   return res.data;
 }
